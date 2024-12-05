@@ -1,0 +1,15 @@
+.input-group{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+
+  input {
+    padding: 10px 8px;
+    border: 1px solid rgba(128, 128, 128, 0.349);
+    border-radius: 8px;
+
+    &:focus{
+      outline: none;
+    }
+  }
+}
