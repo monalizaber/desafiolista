@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './index.scss';
 import Task from '../Task/Task';
 import { tasksMock } from '../../mock/tasksMock';
@@ -59,9 +59,9 @@ export default function Table() {
       </table>
       
       <div className='add-task'>
-        <input onChange={(event) => setNewTaskName(event.target.value)} type="text" placeholder='Nome da tarefa' value={newTaskName}/>
+        <input onChange={(event) => setNewTaskName(event.target.value)} type="text" placeholder='Nova tarefa...' value={newTaskName}/>
         <button className='add-task-btn' onClick={handleAddNewTask}>
-          Adicionar Tarefa
+          +
         </button>
       </div>
       

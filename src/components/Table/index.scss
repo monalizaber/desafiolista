@@ -5,6 +5,10 @@
     border-bottom: 2px solid white;
   }
 
+  tbody {
+    margin-top: 1rem;
+  }
+
   th {
     padding: 8px;
   }
@@ -17,28 +21,30 @@
     input{
       width: 70%;
       background-color: transparent;
-      border:1px solid gray;
-      padding: 0 10px;
-      color: white;
+      border:none;
+      font-style: italic;
+      font-size: 20px;
+      padding-left: 2px;
+      color: #fff;
       border-radius: 5px;
 
       &:focus{
         outline: none;
       }
+      &::placeholder {
+        color: #fff;
+        opacity: 1; 
+      }
     }
   }
 
   .add-task-btn {
-    background-color: $primary-color;
-    padding: 10px;
-    width: 30%;
+    background-color: transparent;
+    padding: 0 10px;
+    font-size: 2rem;
     border-radius: 5px;
     border: none;
     color: white;
     cursor: pointer;
-    
-    &:hover {
-      background-color: rgb(65, 139, 223);
-    }
   }
 }

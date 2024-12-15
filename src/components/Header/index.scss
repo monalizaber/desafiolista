@@ -1,6 +1,6 @@
 .header {
   background-color: $primary-color;
-  padding: 2rem 1rem 0;
+  padding: 1rem 0 0;
   width: 100%;
   display: flex;
   align-items: end;
@@ -20,8 +20,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 32px 4px;
+    padding: 8px 32px 8px;
     cursor: pointer;
+    margin-left: 2rem;
   }
 
   .active {
