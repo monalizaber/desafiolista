@@ -39,7 +39,7 @@ export default function Task({ task, editTask, removeTask }) {
     <>
       <tr className="task" key={task.id}>
         <td>{task.name}</td>
-        <td style={{ paddingLeft: "25px" }}>
+        <td style={{ paddingLeft: "40px" }}>
           <input
             type="checkbox"
             checked={isChecked}
