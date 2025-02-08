@@ -2,19 +2,18 @@ import { useState } from 'react';
 import './index.scss';
 import Task from '../Task/Task';
 import { tasksMock } from '../../mock/tasksMock';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Table() {
   const [tasks, setTasks] = useState(tasksMock);
   const [newTaskName, setNewTaskName] = useState('');
 
   function addTask(task) {
-    const newTasks = [...tasks, task];
-    setTasks(newTasks);
+    setTasks(prevTasks => [...prevTasks, task]);
   }
 
   function removeTask(taskId) {
-    const newTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(newTasks);
+    setTasks(prevTasks => prevTasks.filter((task) => task.id !== taskId));
   }
 
   function editTask(taskId, updatedName, updatedComplete) {
@@ -28,10 +27,10 @@ export default function Table() {
   }
 
   const handleAddNewTask = () => {
-    const taskName = newTaskName.trim()
+    const taskName = newTaskName.trim();
 
     if (taskName) {
-      addTask({ id: tasks.length + 1, name: newTaskName, complete: false });
+      addTask({ id: uuidv4(), name: taskName, complete: false });
       setNewTaskName('');
     }
   };
@@ -59,7 +58,12 @@ export default function Table() {
       </table>
       
       <div className='add-task'>
-        <input onChange={(event) => setNewTaskName(event.target.value)} type="text" placeholder='Nova tarefa...' value={newTaskName}/>
+        <input 
+          onChange={(event) => setNewTaskName(event.target.value)} 
+          type="text" 
+          placeholder='Nova tarefa...' 
+          value={newTaskName}
+        />
         <button className='add-task-btn' onClick={handleAddNewTask}>
           +
         </button>
